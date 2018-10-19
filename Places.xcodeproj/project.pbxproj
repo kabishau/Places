@@ -14,6 +14,23 @@
 		5B8697A121798516002947AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B86979F21798516002947AC /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5B8697AE21799EC3002947AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B8697A921799EC3002947AC /* Quadrat.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 476B70891A0EBAE700AFAC33;
+			remoteInfo = Quadrat;
+		};
+		5B8697B021799EC3002947AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B8697A921799EC3002947AC /* Quadrat.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 476B70DA1A0EBBA500AFAC33;
+			remoteInfo = QuadratTouch;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		5B86979321798514002947AC /* Places.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Places.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B86979621798514002947AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -22,6 +39,7 @@
 		5B86979D21798516002947AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B8697A021798516002947AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B8697A221798516002947AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B8697A921799EC3002947AC /* Quadrat.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Quadrat.xcodeproj; path = "das-quadrat/Source/Quadrat.xcodeproj"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +78,26 @@
 				5B86979D21798516002947AC /* Assets.xcassets */,
 				5B86979F21798516002947AC /* LaunchScreen.storyboard */,
 				5B8697A221798516002947AC /* Info.plist */,
+				5B8697A821799E89002947AC /* Supporting Files */,
 			);
 			path = Places;
+			sourceTree = "<group>";
+		};
+		5B8697A821799E89002947AC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5B8697A921799EC3002947AC /* Quadrat.xcodeproj */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5B8697AA21799EC3002947AC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5B8697AF21799EC3002947AC /* Quadrat.framework */,
+				5B8697B121799EC3002947AC /* QuadratTouch.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -110,12 +146,35 @@
 			mainGroup = 5B86978A21798514002947AC;
 			productRefGroup = 5B86979421798514002947AC /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 5B8697AA21799EC3002947AC /* Products */;
+					ProjectRef = 5B8697A921799EC3002947AC /* Quadrat.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				5B86979221798514002947AC /* Places */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		5B8697AF21799EC3002947AC /* Quadrat.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Quadrat.framework;
+			remoteRef = 5B8697AE21799EC3002947AC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B8697B121799EC3002947AC /* QuadratTouch.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = QuadratTouch.framework;
+			remoteRef = 5B8697B021799EC3002947AC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		5B86979121798514002947AC /* Resources */ = {
