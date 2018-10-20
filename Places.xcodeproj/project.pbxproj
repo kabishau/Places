@@ -12,6 +12,7 @@
 		5B86979C21798514002947AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B86979A21798514002947AC /* Main.storyboard */; };
 		5B86979E21798516002947AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B86979D21798516002947AC /* Assets.xcassets */; };
 		5B8697A121798516002947AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B86979F21798516002947AC /* LaunchScreen.storyboard */; };
+		6B03541C217B7F5200E35CE5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B03541B217B7F5200E35CE5 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		5B8697A021798516002947AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B8697A221798516002947AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B8697A921799EC3002947AC /* Quadrat.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Quadrat.xcodeproj; path = "das-quadrat/Source/Quadrat.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		6B03541B217B7F5200E35CE5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B03541C217B7F5200E35CE5 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +61,7 @@
 			children = (
 				5B86979521798514002947AC /* Places */,
 				5B86979421798514002947AC /* Products */,
+				6B03541A217B7F5200E35CE5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,6 +102,14 @@
 				5B8697B121799EC3002947AC /* QuadratTouch.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		6B03541A217B7F5200E35CE5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6B03541B217B7F5200E35CE5 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
