@@ -7,6 +7,9 @@ class PlacesViewController: UIViewController, CLLocationManagerDelegate {
     var client: Client?
     var session: Session?
     
+    var places = [[String: Any]]()
+    var hasFinishedQuery = true
+    
     @IBOutlet weak var mapView: MKMapView!
     
     var locationManager: CLLocationManager?
