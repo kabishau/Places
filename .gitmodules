@@ -1,3 +1,6 @@
 [submodule "das-quadrat"]
 	path = das-quadrat
 	url = git@github.com:Constantine-Fry/das-quadrat.git
+[submodule "Places/das-quadrat"]
+	path = Places/das-quadrat
+	url = git@github.com:Constantine-Fry/das-quadrat.git

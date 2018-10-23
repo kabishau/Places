@@ -1,7 +1,11 @@
 import UIKit
 import MapKit
+import QuadratTouch
 
 class PlacesViewController: UIViewController, CLLocationManagerDelegate {
+    
+    var client: Client?
+    var session: Session?
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -21,6 +25,8 @@ class PlacesViewController: UIViewController, CLLocationManagerDelegate {
             locationManager!.desiredAccuracy = kCLLocationAccuracyBestForNavigation
             locationManager!.distanceFilter = 50.0
         }
+        
+        setupFoursquare()
     }
     
     
@@ -36,6 +42,20 @@ class PlacesViewController: UIViewController, CLLocationManagerDelegate {
             //mapView.setCenter(newLocation.coordinate, animated: true)
             mapView.setRegion(adjestedRegion, animated: true)
         }
+    }
+    
+    func setupFoursquare() {
+        
+        client = Client(
+            clientID: "LP4EKTZGVWT3D2RZ44LKPNZ4SQYFP0RJR5GMYW5PEPYJWTWO",
+            clientSecret: "XT10HP3WEBOKIPP0JPE1PYKUJSZNPCAKCAHJXFHELXP34P1T",
+            redirectURL: "")
+        
+        if client != nil {
+            var configuration = Configuration(client: client!)
+            Session.setupSharedSessionWithConfiguration(configuration)
+        }
+        session = Session.sharedSession()
     }
     
 }
