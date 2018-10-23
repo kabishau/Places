@@ -7,6 +7,8 @@ class PlacesViewController: UIViewController, CLLocationManagerDelegate {
     var client: Client?
     var session: Session?
     
+    var places: [[String: Any]]()
+    
     @IBOutlet weak var mapView: MKMapView!
     
     var locationManager: CLLocationManager?
@@ -58,5 +60,24 @@ class PlacesViewController: UIViewController, CLLocationManagerDelegate {
         session = Session.sharedSession()
     }
     
+    func queryFoursquare(location: CLLocation) {
+        if session == nil || hasFinishedQuery == false {
+            return
+        }
+        
+        places.removeAll()
+        
+        var parameters = location.parameters()
+        parameters += [Parameter.categoryId: "4d4b7105d754a06374d81259"]
+        parameters += [Parameter.radius: "100"]
+        
+        let searchTask = session!.venues.search(parameters) { (result) -> Void in
+            if let response = result.response {
+                print(response)
+            }
+            self.hasFinishedQuery = true
+        }
+    }
+    searchTask.start()
 }
 
