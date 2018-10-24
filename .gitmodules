@@ -4,3 +4,6 @@
 [submodule "Places/das-quadrat"]
 	path = Places/das-quadrat
 	url = git@github.com:Constantine-Fry/das-quadrat.git
+[submodule "Places/-force"]
+	path = Places/-force
+	url = git@github.com:Constantine-Fry/das-quadrat.git

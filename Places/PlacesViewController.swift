@@ -55,30 +55,47 @@ class PlacesViewController: UIViewController, CLLocationManagerDelegate {
             redirectURL: "")
         
         if client != nil {
-            var configuration = Configuration(client: client!)
+            let configuration = Configuration(client: client!)
             Session.setupSharedSessionWithConfiguration(configuration)
         }
         session = Session.sharedSession()
     }
     
-    func queryFoursquare(location: CLLocation) {
-        if session == nil || hasFinishedQuery == false {
+    func queryFoursquare(location: CLLocation)
+    {
+        if session == nil || hasFinishedQuery == false
+        {
             return
         }
         
         places.removeAll()
         
         var parameters = location.parameters()
-        parameters += [Parameter.categoryId: "4d4b7105d754a06374d81259"]
-        parameters += [Parameter.radius: "100"]
+        parameters += [Parameter.categoryId:"4d4b7105d754a06374d81259"]
+        parameters += [Parameter.radius:"100"]
         
-        let searchTask = session!.venues.search(parameters) { (result) -> Void in
-            if let response = result.response {
+        let searchTask = session!.venues.search(parameters) {
+            (result) -> Void in
+            if let response = result.response
+            {
                 print(response)
+                
+                self.hasFinishedQuery = true
             }
-            self.hasFinishedQuery = true
         }
+        
+        searchTask.start()
     }
-    searchTask.start()
+}
+
+extension CLLocation {
+    func parameters() -> Parameters {
+        let ll = "\(self.coordinate.latitude),\(self.coordinate.longitude)"
+        let llAcc = "\(self.horizontalAccuracy)"
+        let alt = "\(self.altitude)"
+        let altAcc = "\(self.verticalAccuracy)"
+        let parameters = [Parameter.ll:ll, Parameter.llAcc:llAcc, Parameter.alt:alt, Parameter.altAcc:altAcc]
+        return parameters
+    }
 }
 
